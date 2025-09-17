@@ -1,12 +1,12 @@
 abstract class Animal {
     protected String name;
     protected int age;
-    private static int counter = 0;
+    private static int c = 0;
 
     public Animal(String name, int age) {
         this.name = name;
         this.age = age;
-        counter++;
+        c++;
     }
 
     public void eat() {
@@ -17,7 +17,7 @@ abstract class Animal {
     public abstract void move();
 
     public static int getAnimalCount() {
-        return counter;
+        return c;
     }
 }
 
@@ -131,14 +131,14 @@ public class ZooManagementSystem {
         Animal duck = new Duck("Indian Duck", 50);
         Animal cat = new Cat("Black Cat", 12);
 
-        Zookeeper zookeeper = new Zookeeper();
+        Zookeeper z = new Zookeeper();
 
         Animal[] animals = {bird, fish, duck, cat};
 
-        zookeeper.feedAllAnimals(animals);
+        z.feedAllAnimals(animals);
 
         for (Animal a : animals) {
-            zookeeper.makeAnimalSound(a);
+            z.makeAnimalSound(a);
             a.move();
 
             if (a instanceof Flyable) {
